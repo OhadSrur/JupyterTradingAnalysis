@@ -41,4 +41,6 @@ def get_data_adjusted(symbol='MSFT',filename='adjusted.csv',data_type='daily',fo
 		data.index = pd.to_datetime(data.index, format='%Y/%m/%d')
 	except TypeError:
 		data.index = pd.to_datetime(data.index)
-	return data[data.index >= start_date]
+	
+	data.sort_index(inplace=True) # sort df by asc order
+	return data[data.index >= start_date] #filter data previous of start date

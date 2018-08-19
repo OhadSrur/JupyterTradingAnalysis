@@ -36,7 +36,7 @@ def compute_daily_returns(df):
     daily_return = df.copy() # copy given DF to match size and column names
     #daily_return[1:] = (df[1:] / df[:-1].values) - 1
     daily_return = (df / df.shift(1)) - 1 #much easier with Pandas
-    daily_return.iloc[0,:] = 0 # set dail return for row 0 to 0
+    daily_return.iloc[0,] = 0 # set daily return for row 0 to 0
     return daily_return
 
 def test_norm(startDate,endDate,symbol):
