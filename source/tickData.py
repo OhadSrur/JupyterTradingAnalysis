@@ -32,6 +32,11 @@ def get_data_adjusted(symbol='MSFT',filename='adjusted.csv',data_type='daily',fo
 
 	if force_download or not os.path.exists(filename):
 		urlretrieve(url, filename)
-	data = pd.read_csv(filename, index_col='timestamp',parse_dates=True)
-
+	data = pd.read_csv(filename, index_col='timestamp')
+	
+	#Specifying the date format can speed up the process of converting string to date
+	try:
+		data.index = pd.to_datetime(data.index, format='%d/%m/%y')
+	except TypeError:
+		data.index = pd.to_datetime(data.index)
 	return data

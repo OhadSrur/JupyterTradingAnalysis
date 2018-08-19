@@ -104,7 +104,7 @@ venv.bak/
 .mypy_cache/
 
 #Data
-.csv
+adjusted.csv
 
 #API keys
 source/apiKey.txt
