@@ -1,0 +1,2 @@
+# JupyterTradingAnalysis
+Jupyter stocks analysis
