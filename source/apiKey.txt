@@ -1,1 +1,0 @@
-<Insert Your API KEY HERE, you can get it from here https://www.alphavantage.co>
